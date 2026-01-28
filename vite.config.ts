@@ -3,9 +3,8 @@ import react from '@vitejs/plugin-react-swc'
 import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
-export default defineConfig({
-  plugins: [react(),
-    tailwindcss(),
-  ],
-  base: "/typing-speed-test-main/",
-})
+export default defineConfig(({mode}) => ({
+  plugins: [react(), tailwindcss()],
+  // Use root base for local development and the repo subpath for production
+  base: mode === 'development' ? '/' : '/typing-speed-test-main',
+}))
