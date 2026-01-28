@@ -1,0 +1,32 @@
+.confetti-full {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 50;
+}
+
+.confetti-drop {
+  position: absolute;
+  left: 100%;
+  top: -30%;
+  transform: translateX(-100%);
+  width: 100%;
+  opacity: 1;
+  animation: dropDown 2200ms cubic-bezier(.2,.9,.2,1) forwards;
+  will-change: transform, opacity;
+}
+
+@keyframes dropDown {
+  0% {
+    transform: translateX(-100%) translateY(-40vh);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%) translateY(120vh);
+    opacity: 0.9;
+  }
+}
